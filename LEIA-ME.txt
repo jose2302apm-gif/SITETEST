@@ -1,0 +1,74 @@
+VITRINE 3.0 — LIQUID GLASS, RESPONSIVA E COM REFORÇO DE SEGURANÇA NO FRONT-END
+
+ABRIR LOCALMENTE
+1. Extraia o ZIP.
+2. Para uma experiência mais fiel, abra um terminal na pasta e execute:
+   python -m http.server 8000
+3. Acesse http://localhost:8000 no navegador.
+   (A CSP e os cabeçalhos HTTP de segurança da hospedagem devem ser validados no ambiente publicado.)
+
+MELHORIAS VISUAIS E FUNCIONAIS
+- Banner simplificado: imagem do produto em destaque, título curto e botão direto para o produto.
+- Estilo Liquid Glass com reflexos discretos e animações suaves.
+- Layout responsivo para desktop, tablet e celular.
+- Busca, categorias, filtros por preço, ofertas e ordenação.
+- Carrinho e favoritos locais com validação e limites de quantidades.
+- Tratamento de imagens inválidas e links externos não seguros.
+- Melhorias de acessibilidade, foco visível, pular para o conteúdo e suporte a movimento reduzido.
+- Metadados básicos para SEO e compartilhamento.
+
+SEGURANÇA INCLUÍDA
+- CSP no HTML como camada de apoio e configurações de cabeçalhos para Netlify/Cloudflare Pages, Vercel e Apache.
+- X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy e Cross-Origin-Opener-Policy.
+- Validação de URLs de imagem, mídia e afiliados; links de afiliados só abrem com HTTPS.
+- Escapamento de texto dinâmico antes de inserir templates HTML.
+- localStorage tratado como dado não confiável, com validação de IDs/quantidades.
+- Não foram incluídos scripts externos, fontes remotas nem dependências JavaScript de CDN; tipografia usa fontes do sistema.
+
+CONFIGURAÇÃO DE HOSPEDAGEM
+Use somente a configuração que corresponde à sua plataforma:
+- _headers: Netlify ou Cloudflare Pages.
+- netlify.toml: Netlify.
+- vercel.json: Vercel.
+- .htaccess: Apache com mod_headers habilitado.
+Leia SECURITY.md antes de publicar. Os cabeçalhos só funcionam se a hospedagem reconhecer o arquivo correspondente.
+
+ANTES DE PUBLICAR
+1. No script.js, substitua os dados demonstrativos por produtos reais, preços conferidos, descrições corretas e links de afiliado HTTPS válidos.
+2. No index.html, substitua os links sociais de exemplo e adicione contato comercial real.
+3. Atualize e revise os textos de privacidade, afiliados, compras e contato conforme o funcionamento real.
+4. Se hospedar imagens fora do Unsplash, atualize a allowlist em safeImageURL() e a CSP apenas para os domínios necessários.
+5. Se usar analytics, vídeo ou outras integrações, revise a CSP e a política de privacidade.
+6. Teste os cabeçalhos HTTP no site publicado e verifique a consola do navegador para violações CSP.
+7. Ative HSTS somente depois de confirmar HTTPS no domínio e em todos os subdomínios abrangidos.
+
+LIMITES DE SEGURANÇA
+Nenhum site pode ser garantido como invulnerável. Esta versão é estática: não tem backend, autenticação, banco de dados, checkout nem processamento de pagamentos. Os cabeçalhos reduzem riscos no navegador, mas não substituem a segurança da hospedagem, DNS, domínio e conta do administrador, nem protegem contra todos os ataques de disponibilidade. Não coloque segredos, senhas ou chaves privadas no JavaScript.
+
+ARQUIVOS
+index.html — estrutura e conteúdo
+style.css — visual, responsividade e animações
+script.js — catálogo e interações
+_headers — cabeçalhos para hospedagens compatíveis
+netlify.toml — configuração Netlify
+vercel.json — configuração Vercel
+.htaccess — configuração Apache
+SECURITY.md — checklist e limites de segurança
+robots.txt — orientação básica para robôs de busca
+
+
+VERSÃO 3.1 — REDESIGN LIQUID GLASS
+- Removida a faixa de aviso acima do cabeçalho.
+- Removido por completo o banner inicial.
+- Nova hierarquia: cabeçalho em vidro, categorias, produtos em destaque e catálogo.
+- Efeito Liquid Glass com brilho que acompanha mouse, caneta ou toque; transições suaves e estados ativos para dispositivos táteis.
+- Mantidos os arquivos de segurança e as configurações de hospedagem da versão anterior.
+
+
+VERSÃO 3.2 — PRISMATIC LIQUID GLASS
+- Navegação flutuante translúcida com desfoque, saturação, reflexos e bordas luminosas.
+- Paleta azul-gelo, índigo, lavanda e turquesa, combinada com fundos em gradientes suaves.
+- Tipografia Google Fonts: Manrope para títulos e DM Sans para textos; CSP atualizada para permitir somente os domínios de fontes necessários.
+- Animações com curvas suaves, brilho direcional, elevação, microinterações e suporte a toque.
+- Responsividade refinada para telas grandes, tablets e celulares, além de respeito à preferência por movimento reduzido.
+- Segurança de front-end e cabeçalhos de hospedagem mantidos; fontes externas adicionam dependência de disponibilidade do Google Fonts.

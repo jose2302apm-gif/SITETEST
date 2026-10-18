@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eaf4ff">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://images.unsplash.com data:; media-src 'self' https:; connect-src 'self'; upgrade-insecure-requests">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Vitrine — Descobertas selecionadas">
+  <meta property="og:description" content="Explore produtos selecionados em uma vitrine simples, elegante e transparente.">
+  <meta name="description" content="Descubra produtos selecionados, compare detalhes e encontre bons achados na Vitrine.">
+  <meta name="author" content="Vitrine">
+  <title>Vitrine — Descobertas selecionadas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#homeView">Pular para o conteúdo</a>
+  <header class="header" id="top">
+    <a class="logo" href="#top" data-home aria-label="Vitrine, início"><span class="logo-symbol">LOGO</span><span>vitrine<span class="logo-dot">.</span></span></a>
+    <form class="search" id="searchForm" role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg>
+      <input id="searchInput" type="search" maxlength="100" placeholder="Buscar produtos" aria-label="Buscar produtos" autocomplete="off" spellcheck="false">
+      <button type="button" id="clearSearch" class="clear-search" aria-label="Limpar busca" title="Limpar busca">×</button>
+      <kbd>Enter</kbd>
+    </form>
+    <div class="header-right">
+      <button class="header-link" id="favoritesOpen" aria-label="Ver favoritos"><span class="heart-icon">♡</span><span class="header-label">Favoritos</span><b id="favoriteCount" class="tiny-count">0</b></button>
+      <button class="header-link" id="cartOpen" aria-label="Abrir carrinho"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg><span class="header-label">Carrinho</span><b id="cartCount" class="tiny-count green-count">0</b></button>
+    </div>
+  </header>
+
+  <main id="homeView">
+    <section class="hero-slider shell" id="heroSlider" aria-label="Destaques da Vitrine">
+      <div class="hero-track" id="heroTrack">
+        <article class="hero-slide slide-active" data-slide="0" aria-hidden="false">
+          <div class="hero-copy"><span class="hero-eyebrow"><span class="hero-live-dot"></span> CURADORIA VITRINE</span><h1>Pequenos achados.<br><em>Grandes descobertas.</em></h1><p>Uma seleção de produtos para deixar sua rotina mais bonita, prática e inteligente.</p><a class="hero-cta" href="#ofertas">Explorar destaques <span>↗</span></a></div>
+          <div class="hero-art hero-art-one" aria-hidden="true"><div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30b?auto=format&fit=crop&w=1000&q=85" alt="" fetchpriority="high"></div>
+          <span class="hero-index">01 <i>/ 03</i></span>
+        </article>
+        <article class="hero-slide" data-slide="1" aria-hidden="true">
+          <div class="hero-copy"><span class="hero-eyebrow"><span class="hero-live-dot"></span> TECNOLOGIA & ESTILO</span><h1>Design que combina<br><em>com você.</em></h1><p>Descubra acessórios e tecnologia que unem personalidade, praticidade e estilo.</p><a class="hero-cta" href="#catalogo" data-hero-category="Tecnologia">Ver seleção <span>↗</span></a></div>
+          <div class="hero-art hero-art-two" aria-hidden="true"><div class="hero-orb orb-three"></div><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85" alt="" loading="lazy"></div>
+          <span class="hero-index">02 <i>/ 03</i></span>
+        </article>
+        <article class="hero-slide" data-slide="2" aria-hidden="true">
+          <div class="hero-copy"><span class="hero-eyebrow"><span class="hero-live-dot"></span> CASA & BEM-ESTAR</span><h1>Seu espaço,<br><em>seu jeito.</em></h1><p>Ideias funcionais e detalhes especiais para transformar seus ambientes.</p><a class="hero-cta" href="#catalogo" data-hero-category="Casa">Descobrir produtos <span>↗</span></a></div>
+          <div class="hero-art hero-art-three" aria-hidden="true"><div class="hero-orb orb-four"></div><img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1000&q=85" alt="" loading="lazy"></div>
+          <span class="hero-index">03 <i>/ 03</i></span>
+        </article>
+      </div>
+      <button class="hero-arrow hero-prev" id="heroPrev" type="button" aria-label="Banner anterior">‹</button><button class="hero-arrow hero-next" id="heroNext" type="button" aria-label="Próximo banner">›</button>
+      <div class="hero-dots" id="heroDots" aria-label="Selecionar banner"><button class="active" type="button" data-go-slide="0" aria-label="Mostrar banner 1" aria-current="true"></button><button type="button" data-go-slide="1" aria-label="Mostrar banner 2"></button><button type="button" data-go-slide="2" aria-label="Mostrar banner 3"></button></div>
+    </section>
+    <section class="category-band">
+      <div class="shell">
+        <div class="category-head"><div><span class="kicker">EXPLORE</span><h2>Escolha sua <em>categoria.</em></h2></div></div>
+        <div class="category-list" id="categoryList">
+          <button class="category-chip active" data-category="Todos"><span>✦</sp an> Tudo</button>
+          <button class="category-chip" data-category="Tecnologia"><span>⌁</span> Tecnologia</button>
+          <button class="category-chip" data-category="Casa"><span>⌂</span> Casa & decoração</button>
+          <button class="category-chip" data-category="Acessórios"><span>◇</span> Acessórios</button>
+          <button class="category-chip" data-category="Estilo"><span>✧</span> Estilo</button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section shell" id="ofertas">
+      <div class="section-title-row">
+        <div><span class="kicker"><span class="kicker-mark"></span> SELEÇÃO DA VITRINE</span><h2>Em <em>destaque.</em></h2></div>
+        <div class="rail-buttons"><button id="railPrev" aria-label="Ofertas anteriores">←</button><button id="railNext" aria-label="Próximas ofertas">→</button></div>
+      </div>
+      <div id="promoRail" class="product-rail"></div>
+    </section>
+
+    <section class="section shell catalog" id="catalogo">
+      <div class="section-title-row catalog-title">
+        <div><span class="kicker"><span class="kicker-mark"></span> TODOS OS PRODUTOS</span><h2>Descubra algo <em>especial.</em></h2><p id="catalogSubtitle">Explore a seleção ou busque algo específico.</p></div>
+        <div class="catalog-controls" aria-label="Filtros de produtos">
+          <label class="sort">Ordenar <select id="sortSelect"><option value="featured">Destaques editoriais</option><option value="low">Menor preço</option><option value="high">Maior preço</option><option value="discount">Maior desconto</option><option value="name">Nome: A–Z</option></select></label>
+          <label class="sort">Faixa de preço <select id="priceFilter"><option value="all">Todos os preços</option><option value="under100">Até R$ 100</option><option value="100to200">R$ 100 a R$ 200</option><option value="over200">Acima de R$ 200</option></select></label>
+          <label class="offer-filter"><input type="checkbox" id="offersOnly"> Somente ofertas</label>
+          <button class="reset-filters" id="resetFilters" type="button">Limpar filtros</button>
+        </div>
+      </div>
+      <div class="search-status hidden" id="searchStatus" aria-live="polite"></div>
+      <p class="demo-disclaimer"><strong>Importante:</strong> produtos, imagens, preços, descontos e avaliações desta versão são demonstrativos. Confirme os dados reais antes de publicar.</p>
+      <div id="productGrid" class="product-grid"></div>
+      <div id="emptyState" class="empty-state hidden"><span class="empty-search">⌕</span><h3>Não encontramos esse produto.</h3><p>Tente outra palavra ou limpe a busca para ver todas as opções.</p><button class="btn btn-dark" id="resetSearch">Limpar busca <span>×</span></button></div>
+      <div class="catalog-bottom"><span>✦</span> Uma boa escolha começa com informação.</div>
+    </section>
+
+    <section class="editorial shell">
+      <div class="editorial-copy"><span class="kicker">NOSSO JEITO DE ESCOLHER</span><h2>Menos ruído.<br><em>Mais boas escolhas.</em></h2><p>A ideia é simples: ajudar você a descobrir produtos interessantes, conferir os detalhes e seguir para a loja parceira quando decidir comprar.</p><a href="#catalogo" class="btn btn-lime">Descobrir produtos <span>↗</span></a></div>
+      <div class="editorial-art"><div class="editorial-shape"></div><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=85" alt="Ambiente aconchegante e organizado" loading="lazy"><div class="editorial-note"><span>✦</span><div><strong>Escolha no seu tempo</strong><small>Informação antes da decisão.</small></div></div></div>
+    </section>
+  </main>
+
+  <main id="detailView" class="shell detail-view hidden" tabindex="-1">
+    <button class="back-link" id="backToShop">← Voltar para os produtos</button>
+    <div class="detail-layout">
+      <div class="detail-gallery"><div class="detail-main-image"><img id="detailImage" src="" alt=""><span class="detail-badge" id="detailBadge">DESTAQUE</span></div><div id="detailThumbnails" class="detail-thumbnails"></div><div id="detailVideoWrap" class="detail-video hidden"><video id="detailVideo" controls playsinline></video></div></div>
+      <div class="detail-info"><div class="detail-breadcrumb" id="detailCategory">Vitrine / Produto</div><div class="rating"><span aria-hidden="true">ⓘ</span><small id="detailRating">Dados demonstrativos</small></div><h1 id="detailName"></h1><p id="detailDescription" class="detail-description"></p><div class="detail-price"><strong id="detailPrice"></strong><del id="detailOldPrice"></del><span id="detailDiscount" class="discount"></span></div><p class="price-note">Preço e desconto demonstrativos. Confirme valor, frete, estoque e condições diretamente na loja parceira.</p><div class="detail-rule"></div><div class="detail-checks"><p><b>✓</b> Confira fotos e informações do produto</p><p><b>✓</b> A compra é concluída no site do vendedor</p><p><b>✓</b> Consulte as políticas da loja parceira</p></div><div class="quantity-row"><span>Quantidade</span><div class="quantity"><button id="qtyMinus" aria-label="Diminuir quantidade">−</button><strong id="qtyValue">1</strong><button id="qtyPlus" aria-label="Aumentar quantidade">+</button></div></div><div class="detail-actions"><button class="btn btn-lime" id="buyNow">Ir para a loja parceira <span>↗</span></button><button class="btn btn-outline" id="addToCart">＋ Adicionar ao carrinho</button><button class="save-detail" id="saveDetail">♡ Salvar nos favoritos</button></div><p class="affiliate-note">Transparência: esta é uma vitrine de afiliados. Podemos receber comissão por compras realizadas através de nossos links, sem custo adicional para você.</p><div class="detail-extra"><button id="specToggle">Detalhes do produto <span>＋</span></button><div id="specContent" class="spec-content hidden"></div></div></div>
+    </div>
+  </main>
+
+  <div id="overlay" class="overlay hidden"></div>
+  <aside id="cartDrawer" class="drawer" aria-label="Carrinho" aria-hidden="true"><div class="drawer-head"><div><span class="kicker">SUA SELEÇÃO</span><h2>Meu carrinho <small id="drawerCount">(0)</small></h2></div><button id="cartClose" class="close-btn" aria-label="Fechar carrinho">×</button></div><div id="cartItems" class="drawer-items"></div><div id="cartEmpty" class="drawer-empty"><span>♡</span><h3>Seu carrinho está esperando.</h3><p>Adicione os produtos que chamaram sua atenção para encontrá-los facilmente.</p><button class="btn btn-lime" id="continueShopping">Explorar produtos <span>↗</span></button></div><div id="drawerFooter" class="drawer-footer"><div class="total-row"><span>Subtotal estimado</span><strong id="cartTotal">R$ 0,00</strong></div><p>Como as compras são por afiliados, cada item é finalizado na loja parceira.</p><button id="cartBuy" class="btn btn-lime full-btn">Continuar para os produtos <span>↗</span></button><button id="clearCart" class="clear-cart">Limpar carrinho</button></div></aside>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand"><a class="logo logo-light" href="#top" data-home><span class="logo-symbol">v</span><span>vitrine<span class="logo-dot">.</span></span></a><p>Achados interessantes, escolhas conscientes.<br>Uma vitrine para descobrir sem complicação.</p><div class="socials"><a href="#" class="social-link" data-social="Instagram" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" class="fill-dot"></circle></svg></a><a href="#" class="social-link" data-social="YouTube" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"></rect><path d="m10 9 5 3-5 3z" class="fill-shape"></path></svg></a><a href="#" class="social-link" data-social="TikTok" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.2a4.2 4.2 0 1 1-3.5-4.1"></path><path d="M14 3c.5 3.2 2.4 5 5.5 5.2"></path></svg></a><a href="#" class="social-link" data-social="Kwai" rel="noopener noreferrer" aria-label="Kwai" title="Kwai"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"></rect><circle cx="9" cy="10" r="1.3"></circle><circle cx="15" cy="10" r="1.3"></circle><path d="M8 14c2 2 6 2 8 0"></path></svg></a><a href="#" class="social-link" data-social="Facebook" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h1.7V1.5A22 22 0 0 0 15.2 1C12.7 1 11 2.5 11 5.4V9H8v4h3v8z"></path></svg></a></div></div>
+        <div class="footer-column"><h3>Explore</h3><a href="#ofertas">Ofertas da semana</a><a href="#catalogo">Todos os produtos</a><a href="#catalogo" data-footer-category="Tecnologia">Tecnologia</a><a href="#catalogo" data-footer-category="Casa">Casa & decoração</a></div>
+        <div class="footer-column"><h3>Transparência</h3><a href="#politica" data-info="privacidade">Privacidade</a><a href="#politica" data-info="afiliados">Como funcionam os links</a><a href="#politica" data-info="compras">Compras e devoluções</a><a href="#politica" data-info="contato">Contato</a></div>
+        <div class="footer-signup"><span class="kicker">FICA A DICA</span><h3>Boas descobertas<br>começam por aqui.</h3><p>Volte sempre para explorar novos achados.</p><a class="footer-cta" href="#ofertas">Ver destaques <span>↗</span></a></div>
+      </div>
+      <div id="policyPanel" class="policy-panel hidden"><button id="policyClose" aria-label="Fechar">×</button><h3 id="policyTitle"></h3><p id="policyText"></p></div>
+      <div class="footer-bottom"><span>© <span id="currentYear">2026</span> Vitrine. Todos os direitos reservados.</span><span>Vitrine independente de produtos e ofertas.</span><span class="footer-disclosure">Alguns links podem gerar comissão de afiliado.</span></div>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
